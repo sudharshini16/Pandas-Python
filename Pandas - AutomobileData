@@ -1,0 +1,49 @@
+# From given data set print first and last five rows
+
+import pandas as pd
+df = pd.read_csv("AutomobileData.csv")
+df.head(5)
+
+---------------------------------------------------------------------------------------------------------
+# Print All Toyota Cars details (hint: use groupby function)
+
+import pandas as pd
+df = pd.read_csv("AutomobileData.csv")
+car_Manufacturers = df.groupby('company')
+toyotaDf = car_Manufacturers.get_group('toyota')
+toyotaDf
+
+---------------------------------------------------------------------------------------------------------
+# Count total cars per company (by using value_counts function)
+
+import pandas as pd
+df = pd.read_csv("AutomobileData.csv")
+df['company'].value_counts()
+
+---------------------------------------------------------------------------------------------------------
+# Find each company’s Higesht price car. (hint: Groupby function and then apply .max function)
+
+import pandas as pd
+df = pd.read_csv("Automobile_data.csv")
+for x in df['price']:
+    if x == df['price'].max():
+       print(x)
+---------------------------------------------------------------------------------------------------------
+# Find the average mileage of each car making company (hint: Groupby function and then apply .mean function)
+
+import pandas as pd
+df = pd.read_csv('AutomobileData.csv')
+car_Manufacturers = df.groupby('company')
+mileageDf = car_Manufacturers['company','average-mileage'].mean()
+mileageDf
+
+---------------------------------------------------------------------------------------------------
+# Sort all cars by Price column (hint: using sort_values function).
+
+carsDf = carsDf.sort_values(by=['price', 'horsepower'], ascending=False)
+carsDf.head(5)
+---------------------------------------------------------------------------------------------------
+# Check for the null values for entire dataset.
+
+Null = s.isnull().values.any()
+---------------------------------------------------------------------------------------------------------
